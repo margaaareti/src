@@ -1,0 +1,12 @@
+<h1>Guestbook</h1>
+
+<div>
+    {{.SignatureCount}} total signatures - <!--Значение “.” соответствует структуре Guestbook. Сюда вставляется ее поле SignatureCount.-->
+    <a href="/guestbook/new">Add Your Signatures</a> 
+</div>
+
+<div>
+    {{range .Signatures}} <!--Берет сегмент из поля Signatures структуры Guestbook и повторяет обработку для каждой содерж. в нем строки-->
+    <p>{{.}}</p> <!--Повторяется для каждого элемента сегмента. "." присваивается текущая строка записи, а в вывод вставляется элемент абзаца HTML с текстом записи-->
+    {{end}}
+</div>
